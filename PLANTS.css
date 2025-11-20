@@ -1,0 +1,164 @@
+   .topbar{
+        background-color: #ffe4e1;
+        margin: -8px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 30px;
+        padding: 19px;
+    }
+
+    .topbar a{
+        font-size: 18px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .navbar{
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .logo{
+        display: flex;
+        justify-self: start;
+    }
+
+    .logo img{
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .sections {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .sections a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+
+    .search-cart {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search-cart input {
+        padding: 5px 10px;
+        background-color: #ffe4e1;
+        border: none;
+        font-size: 15px;
+    }
+
+    .poster img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 20px;
+        margin: 0;
+    }
+
+    h2.section-title {
+        text-align: left;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 40px 8% 20px;
+        border-bottom: 2px solid #3b3b3b;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .Product{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin: 20px 8%;
+        margin-bottom: 400px;
+    }
+
+    .plants{
+        background:#ffb6af;
+        border-radius: 30px;
+        border: 2px solid rgba(255, 255, 255, 0.925);
+        text-align: center;
+        width: 220px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.2s ease;
+    }
+
+    .plants img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .plants p{
+        font-size: 1.1rem;
+        margin: 10px 0;
+    }
+
+    .plants-Price{
+        font-weight: bold;
+    }
+
+    .plants:hover{
+        transform: translateY(-5px);
+    }
+
+    .plants a{
+        text-decoration: none;
+        color: #3b3b3b;
+        font-weight: 100px;
+        font-size: 10px;
+    }
+
+    footer{
+        background-color: #ffe4e1;
+        margin: 0;
+    }
+
+    footer .Summary-product{
+        display: flex;
+        justify-content: space-around;
+        padding: 30px 20px;
+    }
+
+    footer .Service-information{
+        display: grid;
+        justify-content: space-around;
+    }
+
+    @media (max-width: 768px) {
+
+        .navbar {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sections {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .search-cart {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .poster img {
+            width: 100%;
+            height: auto;
+        }
+    }
