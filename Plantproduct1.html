@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="Plantproduct.css">
+<head>
+</head>
+<body>
+
+<nav>
+    <div class="topbar">
+        <a href="Contactus.html">Contact us</a>
+        <a href="signin.html">Sign in</a>
+        <a href="https://www.facebook.com/share/16ytWX3n5W/"><i class="fab fa-facebook"></i></a>
+    </div>
+</nav>
+
+<div class="navbar">
+
+    <div class="logo">
+        <img src="Gemini_Generated_Image_wf9d3cwf9d3cwf9d.png" alt="Logo of Floral Elegance">
+    </div>
+
+    <div class="sections">
+        <a href="index.html">HOME</a>
+        <a href="BOUQUETS.html">BOUQUETS</a>
+        <a href="GIFTS.html">GIFTS</a>
+        <a href="PLANTS.html">PLANTS</a>
+        <a href="ABOUTUS.html">ABOUT US</a>
+    </div>
+
+    <div class="search-cart">
+      <input type="text" placeholder="Search...">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-shopping-cart" id="cart-icon"></i>
+    </div>
+</div>
+
+<div class="product-container">
+
+    <div class="product-image">
+        <img src="52e28822ef8c7335356f19c14c9d865a.jpg" alt="Purple Delight">
+    </div>
+
+    <div class="product-information">
+
+        <div>
+            <h2>Purple Delight</h2>
+            <p class="price">₱ 1,320</p>
+            <p class="description">The Purple Delight Bouquet is a stunning arrangement that captures the essence of elegance and charm. Featuring vibrant purple orchids, soft lavender roses, and delicate lilacs, this bouquet evokes feelings of joy and serenity.</p>
+            <p class="availability">Availability: In Stock</p>
+        </div>
+
+        <div class="quantity">
+            <label for="qty">Qty</label>
+            <input type="number" id="qty" value="1" min="1">
+            <button class="add-to-cart">+ Add To Cart</button>
+        </div>
+
+        <div class="extra-links">
+            <a href="#"><i class="far fa-heart"></i> Add To Wish List</a>
+            <a href="#"><i class="fas fa-balance-scale"></i> Compare This Product</a>
+        </div>
+
+        <div class="delivery-options">
+            <button class="option-btn" data-option="Indoor pickup">Indoor pickup</button>
+            <button class="option-btn" data-option="Delivery">Delivery</button>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="cart-popup" class="cart-popup hidden">
+    <h3>Cart Item</h3>
+    <div id="cart-items"></div>
+    <button id="checkout-btn" class="checkout-btn"><i class="fas fa-shopping-cart"></i> Check Out</button>
+</div>
+
+
+<script>
+let selectedOption = null;
+let cart = [];
+
+
+document.querySelectorAll(".option-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".option-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedOption = btn.dataset.option;
+    });
+});
+
+
+document.querySelector(".add-to-cart").addEventListener("click", () => {
+    const qty = parseInt(document.getElementById("qty").value);
+
+    if (!selectedOption) {
+        alert("Please choose Indoor pickup or Delivery first.");
+        return;
+    }
+
+    const product = {
+        name: "Purple Delight",
+        price: 1320,
+        qty: qty,
+        photo: "52e28822ef8c7335356f19c14c9d865a.jpg",
+        option: selectedOption
+    };
+
+    
+    let existing = cart.find(item => 
+        item.name === product.name && 
+        item.option === product.option
+    );
+
+    if (existing) {
+        existing.qty += qty;
+    } else {
+        cart.push(product);
+    }
+
+    updateCartUI();
+});
+
+
+document.getElementById("cart-icon").addEventListener("click", () => {
+    document.getElementById("cart-popup").classList.toggle("hidden");
+});
+
+
+function updateCartUI() {
+    const container = document.getElementById("cart-items");
+    container.innerHTML = "";
+
+    cart.forEach(item => {
+        container.innerHTML += `
+            <div class="cart-row">
+                <img src="${item.photo}">
+                <div>
+                    <p>${item.name}</p>
+                    <p>${item.qty} × ₱${item.price}</p>
+                    <small>${item.option}</small>
+                </div>
+            </div>
+        `;
+    });
+}
+</script>
+
+</body>
+</html>
