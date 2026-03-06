@@ -40,15 +40,15 @@
 <div class="product-container">
 
     <div class="product-image">
-        <img src="238d4fc52e49c6dbdae84f61f07c568a.jpg" alt="Crochet Cactus">
+        <img src="52e9f55be3f9ff605a658b71c07e1b8e.jpg" alt="Lush Greenery">
     </div>
 
     <div class="product-information">
 
         <div>
-            <h2>Crochet Cactus</h2>
+            <h2>Lush Greenery</h2>
             <p class="price">₱ 1,400</p>
-            <p class="description">The Crochet Cactus Bouquet is a delightful and whimsical arrangement that brings the charm of the desert into your home without the fuss of maintaining real plants. Featuring vibrant crochet cacti in varying shades of green, adorned with colorful floral accents, this bouquet is perfect for lovers of unique and playful decor.</p>
+            <p class="description">The Lush Greenery Bouquet is a vibrant and refreshing arrangement that celebrates the beauty of nature. Featuring an assortment of lush ferns, delicate eucalyptus, and crisp ivy, this bouquet brings a touch of tranquility and vitality to any space.</p>
             <p class="availability">Availability: In Stock</p>
         </div>
 
@@ -100,7 +100,6 @@ document.querySelectorAll(".option-btn").forEach(btn => {
 });
 
 
-
 document.querySelector(".add-to-cart").addEventListener("click", () => {
 
     const qty = parseInt(document.getElementById("qty").value);
@@ -111,10 +110,10 @@ document.querySelector(".add-to-cart").addEventListener("click", () => {
     }
 
     const product = {
-        name: "Crochet Cactus",
+        name: "Lush Greenery",
         price: 1400,
         qty: qty,
-        photo: "238d4fc52e49c6dbdae84f61f07c568a.jpg",
+        photo: "52e9f55be3f9ff605a658b71c07e1b8e.jpg",
         option: selectedOption
     };
 
@@ -212,6 +211,7 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
 updateCartUI();
 
 </script>
+
 
 </body>
 </html>
